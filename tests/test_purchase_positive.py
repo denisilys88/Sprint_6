@@ -6,8 +6,8 @@ from pages.scooter_delivery_page import ScooterDeliveryPage
 class TestPurchasePositive:
 
     def test_positive_first_purchase_button(self, driver):
-        driver.get('https://qa-scooter.praktikum-services.ru/')
         delivery_page = ScooterDeliveryPage(driver)
+        delivery_page.go_page()
         delivery_page.click_purchase()
         delivery_page.set_name(HELP.fake_data()[0])
         delivery_page.set_lastname(HELP.fake_data()[1])
@@ -22,11 +22,11 @@ class TestPurchasePositive:
         delivery_page.click_next()
         delivery_page.confirm_purchase_popup()
         status = delivery_page.get_purchase_status()
-        assert 'Заказ оформлен' in status
+        assert 'Заказ оформлен' in status, "После оформления заказа в popup должен быть тескт 'Заказ оформлен'"
 
     def test_positive_second_purchase_button(self, driver):
-        driver.get('https://qa-scooter.praktikum-services.ru/')
         delivery_page = ScooterDeliveryPage(driver)
+        delivery_page.go_page()
         delivery_page.scrolldown()
         delivery_page.click_cookie()
         delivery_page.click_second_purchase()
@@ -43,6 +43,6 @@ class TestPurchasePositive:
         delivery_page.click_next()
         delivery_page.confirm_purchase_popup()
         status = delivery_page.get_purchase_status()
-        assert 'Заказ оформлен' in status
+        assert 'Заказ оформлен' in status, "После оформления заказа в popup должен быть тескт 'Заказ оформлен'"
 
 

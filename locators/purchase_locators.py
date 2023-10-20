@@ -31,7 +31,7 @@ class PurchaseLocators:
 
     COOKIE_BUTTON = (By.ID, "rcc-confirm-button")
 
-    HTML = (By.TAG_NAME, 'html')
+
 
 
 

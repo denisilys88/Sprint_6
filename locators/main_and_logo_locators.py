@@ -6,3 +6,5 @@ class MainAndLogoLocators:
     LOGO = (By.XPATH, ".//a[@class='Header_LogoScooter__3lsAR']")
     YANDEX = (By.XPATH, ".//a[@class='Header_LogoYandex__3TSOI']")
     MAIN_IMAGE = (By.XPATH, ".//img[@alt='Scooter blueprint']")
+
+    HTML = (By.TAG_NAME, 'html')
